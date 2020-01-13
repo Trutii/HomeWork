@@ -1,0 +1,27 @@
+from random import randint
+N=20
+a=[randint(1,10) for i in range(N)]
+a.sort()
+print(a)
+number = int(input())
+l=0
+ll=2
+k=0
+h=N-1
+while N>1:
+    while l<=h:
+        m=(l+h)//2
+        if number<a[m]:
+            h=m-1
+        elif number>a[m]:
+            l=m+1
+        else:
+            del a[m]
+            k+=1
+            if ll>1:
+                print("id:",m)
+                ll-=2
+            break
+    else:
+        N-=20
+print("кол-во:",k)
