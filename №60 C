@@ -1,0 +1,24 @@
+from random import randint
+N=20
+a=[randint(1,10) for i in range(N)]
+a.sort()
+print(a)
+number = int(input())
+l=0
+h=N-1
+while l<=h:
+    m=(l+h)//2
+    if number<a[m]:
+        h=m-1
+    elif number>a[m]:
+        l=m+1
+    else:
+        print("id:",m)
+        break
+else:
+    if number>a[19]:
+        print("Число",number,"не найдено, ближайшее к нему число",a[19])
+    elif abs(a[(m+1)]-a[m])>abs(a[(m-1)]-a[m]):
+        print("Число",number,"не найдено, ближайшее к нему число",a[m])
+    else:
+        print("Число",number,"не найдено, ближайшее к нему число",a[m])
