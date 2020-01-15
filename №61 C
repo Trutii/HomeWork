@@ -1,0 +1,15 @@
+s="Вася пошёл гулять".split()
+a=[]
+b=1
+c=0
+for i in s:
+    a.append(i)
+for i in a:
+    c=0
+    if b>c:
+        for k in i:
+            c+=1
+            b=c+1
+            g=i
+print("Самое длинное слово:",g)
+print(b-1)
